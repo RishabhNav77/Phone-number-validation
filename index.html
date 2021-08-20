@@ -1,0 +1,50 @@
+<html>
+    <head>
+        <title>Mobile Number Validation</title>
+        <style>
+            span{
+                color: red;
+                font-weight: bolder;
+            }
+        </style>
+    </head>
+    <body background="https://previews.123rf.com/images/leoedition/leoedition1710/leoedition171000571/88752848-medical-background-medical-care-health-care-vector-medicine-illustration.jpg">
+        <script>
+            function myfun() {
+                var a = document.getElementById("mobilenumber").value;
+                if(a == "") {
+                    document.getElementById("messages").innerHTML = "** Please fill the Mobile Number";
+                    return false;
+                }
+
+                if(isNaN(a)) {
+                    document.getElementById("messages").innerHTML = "** Only Numbers are allowed";
+                    return false;
+                }
+
+                if(a.length < 10) {
+                    document.getElementById("messages").innerHTML = "**Mobile number must be of 10 digits";
+                    return false;
+                }
+
+                if(a.length > 10) {
+                    document.getElementById("messages").innerHTML = "**Mobile number must be of 10 digits";
+                    return false;
+                }
+
+            }
+        </script>
+        <center><label>Mobile Number Validation</label></center>
+        <br><br>
+        <center>
+        <form onsubmit="return myfun()">
+            Mobile Number : <input type="text" id="mobilenumber" value="">
+            <span id="messages"></span><br><br>
+            <input type="submit" value="Submit">
+
+
+        </form> 
+    </center>
+
+    </body>
+</html>
